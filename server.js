@@ -1,9 +1,13 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
+const cors = require("cors");
 app.use(express.json());
+app.use(cors());
 const translate = require("google-translate-api-x");
 // const { translate } = require("@vitalets/google-translate-api");
-app.listen(4000, () => {
+const port = process.env.PORT || 4000;
+app.listen(port, () => {
   console.log("listening 4000");
 });
 
